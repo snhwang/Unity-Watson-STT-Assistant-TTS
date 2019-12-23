@@ -16,7 +16,7 @@ The following clip shows a demo using the chatbot with a 3D character model and 
 
 I implemented this code using Unity 2019.2.8f1. This is the only version that I know the code works with. I briefly tried to upgrade this to 2019.2.16f1 but it didn't work. It could be a very simple and easily fixed problem but I didn't look into it yet. 
 
-This code works with the most current available version of IBM unity-sdk (version 4.1.1, https://github.com/watson-developer-cloud/unity-sdk) and unity-sdk-core (version 1.2.0, https://github.com/IBM/unity-sdk-core/). However, the code was modified from code provided with  unity-sdk.4.0.0.  I used this in in conjunction with  unity-sdk-core-1.0.0. I have updated the sdk's and the code still works.
+This code works with the most current available version of IBM unity-sdk (version 4.1.1, https://github.com/watson-developer-cloud/unity-sdk) and unity-sdk-core (version 1.2.0, https://github.com/IBM/unity-sdk-core/). However, the code was originally modified from code provided with  unity-sdk.4.0.0 which I was using in conjunction with unity-sdk-core-1.0.0. I have updated the sdk's and the code still works. The folders unity-sdk-4.1.1 and unity-sdk-core-1.0.0 should be in the Assets folder. If you try updating the SDKs in the future, you should delete these folders and replace them with the new ones.
 
 The script SpeechInput.cs is only slightly modified from ExampleStreaming.cs from unity-sdk-4.0.0. ExampleStreaming.cs continuously listens for speech and uses Watson speech-to-text to convert it to text. It will listen until the user stops after completing a phrase or sentence. I modified the function OnRecognize() with a few lines of code such that when the phrase of speech is determined to be finalized, three things occur:
 
@@ -26,11 +26,13 @@ The script SpeechInput.cs is only slightly modified from ExampleStreaming.cs fro
 
 The script SimpleBot.cs is modified from ExampleAssistantV2.cs which originally providing testing for Unity with IBM Watson Assistant. The tests involved sending text messages to and receiving text responses from Assistant. I added in an IBM Watson text-to-speech service to convert the text to speech as was done in the original Recipe. When the speech is processed the status is set to "Finished" and the audio recording for speech is re-activated.
 
+I also have a version where I incorporated commands to be initated by the chatbot as was done periouvsly at:
+
 https://github.com/IBM/vr-speech-sandbox-cardboard
 
 
 
-Setting up IBM Watson Services
+## Setting up IBM Watson Services
 
 I'll assume you already created your IBM Watson Text-To-Speech, Assistant, and Speech-To-Text services.
 
