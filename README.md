@@ -44,7 +44,7 @@ To find your text-to-speech credentials, let's start at the IBM Cloud Dashboard:
 2. In the Resource list, go down to Services and click on your Text-to-speech service.
 3. You should now be at the page showing your credentials. Clicking on the icon towards the right will copy your API key. You don't need to reveal it to copy it.
 
-![tts_credentials](H:\Unity\tts_credentials.gif)
+![tts_credentials](tts_credentials.gif)
 
 1. 
 
@@ -58,17 +58,17 @@ For the Assistant chatbot, we need additional information. To find the necessary
 4. Go to the three vertical dots at he right of your Assistant. Click on settings
 5.  In Assistant Settings, click on API details. You will see the credentials which can be copied by clicking on the icons on the right. By the way, the credentials shown in the clip are already deleted.
 
-![Assistant_credentials](H:\Unity\Assistant_credentials.gif)
+![Assistant_credentials](Assistant_credentials.gif)
 
 
 
 Where to place the credentials
 
-![STT_credentials](H:\Unity\STT_credentials.png)
+![STT_credentials](STT_credentials.png)
 
 Find the SpeechStreaming gameobject under the SpeechToText gameobject (arrow on the left). If you select it, you will see the IAM APIkey field in the Inspector on the right where you should past your Speech-to-text API key (arrow on the right and blocked out by the blue line).
 
-![Assistant_TTS_credentials](H:\Unity\Assistant_TTS_credentials.png)
+![Assistant_TTS_credentials](Assistant_TTS_credentials.png)
 
 Select the ChatbotToSpeech gameobject to see the fields for the Assistant API key, Assistant ID, and Text-to-speech API key. I don't remember where I found the version date as specified by 2019-05-28. It seems to work and it is what I have been using. The IBM cloud API documentation uses 2019-02-29, which also seems to work. I put in 2019-12-25, which also worked. Watson supposedly finds the most recent version at or before the specified date. It would be better to find the correct version date but I haven't motivated myself to do so yet since everything works.
 
