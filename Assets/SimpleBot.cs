@@ -1,10 +1,10 @@
-﻿/*
+/*
  * Copyright 2019 Scott Hwang. All Rights Reserved.
  * This code was modified from ExampleAssistantV2.cs 
  * in unity-sdk-4.0.0. This continueds to be licensed 
  * under the Apache License, Version 2.0 as noted below.
  * 
- * Iadded the Watson text-to-speech service and
+ * I added the Watson text-to-speech service and
  * a flag to communicate with SpeechInput.cs.
  * 
  * I also incorporated the use of the chatbot to execute
@@ -35,6 +35,7 @@
 
 using System;
 using System.Collections;
+using System.Net;
 using IBM.Cloud.SDK;
 using IBM.Cloud.SDK.Authentication.Iam;
 using IBM.Cloud.SDK.Utilities;
@@ -88,6 +89,12 @@ namespace IBM.Watson.Examples
 
         private void Start()
         {
+            // Enable TLS 1.2
+            //ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
+
+            // Disable old protocols
+            //ServicePointManager.SecurityProtocol &= ~(SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11);
+
             counter = 0;
             LogSystem.InstallDefaultReactors();
             Runnable.Run(CreateService());
@@ -127,6 +134,8 @@ namespace IBM.Watson.Examples
                 yield return null;
 
             Assistant_service = new AssistantService(versionDate, authenticator);
+
+            Assistant_service.SetServiceUrl(serviceUrl);
 
             if (string.IsNullOrEmpty(tts_apikey))
             {
