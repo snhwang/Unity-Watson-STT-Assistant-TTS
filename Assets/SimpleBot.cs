@@ -51,6 +51,7 @@ namespace IBM.Watson.Examples
     public class SimpleBot: MonoBehaviour
     {
         public string tts_apikey;
+        public string tts_serviceUrl;
 
         #region PLEASE SET THESE VARIABLES IN THE INSPECTOR
         [Space(10)]
@@ -122,7 +123,7 @@ namespace IBM.Watson.Examples
 
             if (string.IsNullOrEmpty(Assistant_apikey))
             {
-                throw new IBMException("Please provide IAM ApiKey for the service.");
+                throw new IBMException("Please provide Watson Assistant IAM ApiKey for the service.");
             }
 
             //  Create credential and instantiate service
@@ -134,12 +135,16 @@ namespace IBM.Watson.Examples
                 yield return null;
 
             Assistant_service = new AssistantService(versionDate, authenticator);
+            if (!string.IsNullOrEmpty(serviceUrl))
+            {
+                Assistant_service.SetServiceUrl(serviceUrl);
+            }
 
             Assistant_service.SetServiceUrl(serviceUrl);
 
             if (string.IsNullOrEmpty(tts_apikey))
             {
-                throw new IBMException("Please provide IAM ApiKey for the service.");
+                throw new IBMException("Please provide Text-to-speech IAM ApiKey for the service.");
             }
 
 
@@ -151,6 +156,10 @@ namespace IBM.Watson.Examples
                 yield return null;
 
             tts_service = new TextToSpeechService(tts_authenticator);
+            if (!string.IsNullOrEmpty(tts_serviceUrl))
+            {
+                tts_service.SetServiceUrl(tts_serviceUrl);
+            }
 
             // Set speech processing status to "Processing"
             processStatus = "Processing";
