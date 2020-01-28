@@ -4,6 +4,8 @@ Scott Hwang
 01/28/2020
 
 ## Notices
+Still updating things! I will delete this line when it's ready
+
 01/28/2020
 Fixed the bug involving the Service URL mentioned below.
 
