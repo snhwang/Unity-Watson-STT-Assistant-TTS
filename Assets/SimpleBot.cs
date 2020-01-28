@@ -48,7 +48,7 @@ using UnityEngine.UI;
 
 namespace IBM.Watson.Examples
 {
-    public class SimpleBot: MonoBehaviour
+    public class SimpleBot : MonoBehaviour
     {
         public string tts_apikey;
         public string tts_serviceUrl;
@@ -127,7 +127,7 @@ namespace IBM.Watson.Examples
             }
 
             //  Create credential and instantiate service
-//            IamAuthenticator authenticator = new IamAuthenticator(apikey: Assistant_apikey, url: serviceUrl);
+            //            IamAuthenticator authenticator = new IamAuthenticator(apikey: Assistant_apikey, url: serviceUrl);
             IamAuthenticator authenticator = new IamAuthenticator(apikey: Assistant_apikey);
 
             //  Wait for tokendata
@@ -139,8 +139,6 @@ namespace IBM.Watson.Examples
             {
                 Assistant_service.SetServiceUrl(serviceUrl);
             }
-
-            Assistant_service.SetServiceUrl(serviceUrl);
 
             if (string.IsNullOrEmpty(tts_apikey))
             {
@@ -195,36 +193,36 @@ namespace IBM.Watson.Examples
                 yield return null;
             }
 
- 
+
             //_testString = "I am Bob";
-//            if (!String.IsNullOrEmpty(_testString))
-//            {
-                byte[] synthesizeResponse = null;
-                AudioClip clip = null;
-                tts_service.Synthesize(
-                    callback: (DetailedResponse<byte[]> response, IBMError error) =>
-                    {
-                        synthesizeResponse = response.Result;
-                        clip = WaveFile.ParseWAV("myClip" + counter.ToString(), synthesizeResponse);
-                        PlayClip(clip);
-                    },
-                    text: _testString,
-                    //voice: "en-US_AllisonV3Voice",
-                    voice: "en-US_MichaelV3Voice",
-                    //voice: "en-US_MichaelVoice",
-                    accept: "audio/wav"
-                );
+            //            if (!String.IsNullOrEmpty(_testString))
+            //            {
+            byte[] synthesizeResponse = null;
+            AudioClip clip = null;
+            tts_service.Synthesize(
+                callback: (DetailedResponse<byte[]> response, IBMError error) =>
+                {
+                    synthesizeResponse = response.Result;
+                    clip = WaveFile.ParseWAV("myClip" + counter.ToString(), synthesizeResponse);
+                    PlayClip(clip);
+                },
+                text: _testString,
+                //voice: "en-US_AllisonV3Voice",
+                voice: "en-US_MichaelV3Voice",
+                //voice: "en-US_MichaelVoice",
+                accept: "audio/wav"
+            );
 
-                while (synthesizeResponse == null)
-                    yield return null;
+            while (synthesizeResponse == null)
+                yield return null;
 
-                counter++;
+            counter++;
 
-                processStatus = "Finished";
+            processStatus = "Finished";
 
-                yield return new WaitForSeconds(clip.length);
+            yield return new WaitForSeconds(clip.length);
 
-//            }
+            //            }
 
         }
 
@@ -235,12 +233,12 @@ namespace IBM.Watson.Examples
             {
                 yield return null;
             }
-            
+
             while (processStatus != "Process")
             {
                 yield return null;
             }
-            
+
             // When processing the chat, ignore input speech
             if (processStatus == "Process")
             {
@@ -341,5 +339,4 @@ namespace IBM.Watson.Examples
         }
 
     }
-
 }
