@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2019 Scott Hwang. All Rights Reserved.
  * This code was modified slightly from ExampleStreaming.cs 
  * in unity-sdk-4.0.0. This continueds to be licensed 
@@ -68,7 +68,7 @@ namespace IBM.Watson.Examples
         private SpeechToTextService _service;
 
         public SimpleBot bot;
-        
+
         private void Start()
         {
             LogSystem.InstallDefaultReactors();
@@ -228,7 +228,7 @@ namespace IBM.Watson.Examples
                 {
                     foreach (var alt in res.alternatives)
                     {
-//                        string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
+                        //                        string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
                         string text = string.Format("{0}", alt.transcript);
                         Log.Debug("SpeechInput.OnRecognize()", text);
                         ResultsField.text = text;
