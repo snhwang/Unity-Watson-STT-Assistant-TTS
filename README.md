@@ -1,16 +1,15 @@
 # 3D Chatbot with IBM Watson Speech-To-Text, Assistant, and Text-To-Speech on Unity
 
 Scott Hwang
-
-## Notice!!!
 01/28/2020
-Sorry, the program doesn't use the service URL for Assistant correctly so only the default Dallas region works. I will upload a fixed version by tomorrow. I was able to get it to work using the Washington, DC and London regions once I fixed the bug. I will also check to make sure the instructions in the video clip for obtaining the service URL are correct.
 
---Scott
+## Notices
+01/28/2020
+Fixed the bug involving the Service URL mentioned below.
 
+01/28/2020
+Sorry, the program doesn't use the Service URL for Assistant correctly so only the default Dallas region works. I will upload a fixed version by tomorrow. I was able to get it to work using the Washington, DC and London regions once I fixed the bug. I will also check to make sure the instructions in the video clip for obtaining the service URL are correct.
 
-
-12/20/2019
 ## Introduction
 
 The code here implements speech-to-text conversion, a conversational chatbot, and text-to-speech conversion using IBM Watson. This is basically an update for the the very helpful tutorial provided as an IBM developerWorks Recipe (https://developer.ibm.com/recipes/tutorials/create-a-3d-digital-human-with-ibm-watson-assistant-and-unity3d/). Following the instructions of the IBM Recipe doesn't work if you use the current versions of all the components. It was still very helpful to know all the software components I needed to create the chatbot. The code here only includes the audio and text components. As was done in the Recipe, I have used this in conjunction with SALSA LipSync (https://assetstore.unity.com/packages/tools/animation/salsa-lipsync-suite-148442) and a 3D model to create a 3D visual chatbot with moving lips during speech. I also initially used the free UMA 2 Unity Multipurpose Avatar (https://assetstore.unity.com/packages/3d/characters/uma-2-unity-multipurpose-avatar-35611). SALSA LipSync is not a free asset, so I removed it for purposes of posting it to the public. Since the lips weren't moving, it was pointless to have the 3D Avatar, so I removed it too. In addition to UMA 2, I have used this with other 3D models compatible with SALSA, including models from Reallusion and Daz3D. I will discuss putting in the 3D model at the end.
@@ -61,9 +60,12 @@ For the Assistant chatbot, we need additional information. To find the necessary
 
 1. At the top left, click on the dropdown Navigation menu and go to the Resource List.
 2. In Resource List, go down to the Services and click on your Assistant
+
+2b. On the assistant page with the "Launch Watson Assistant" button, you can see your API key and Service Url. Please note that the Service URL is not the same as the Assistant URL that appears with the API detals in step 5. The Assistant URL is a subdirectory of the Service URL. You will need the Service URL.
+
 3. Click on Launch Watson Assistant. You can get the API key on this page but you also need the Assistant ID.
 4. Go to the three vertical dots at he right of your Assistant. Click on settings
-5.  In Assistant Settings, click on API details. You will see the credentials which can be copied by clicking on the icons on the right. By the way, the credentials shown in the clip are already deleted.
+5.  In Assistant Settings, click on API details. You will see the credentials which can be copied by clicking on the icons on the right. You will need the Assistant ID. The API key is also available on this page. As a reminder, please recall that the Assitant URL is a subdirectory and thus not the same as the Service URL. By the way, the credentials shown in the clip are already deleted.
 
 ![Assistant_credentials](Assistant_credentials.gif)
 
@@ -73,11 +75,11 @@ Where to place the credentials
 
 ![STT_credentials](STT_credentials.png)
 
-Find the SpeechStreaming gameobject under the SpeechToText gameobject (arrow on the left). If you select it, you will see the IAM APIkey field in the Inspector on the right where you should past your Speech-to-text API key (arrow on the right and blocked out by the blue line).
+Find the SpeechStreaming gameobject under the SpeechToText gameobject (arrow on the left). If you select it, you will see the IAM APIkey field in the Inspector on the right where you should paste your Speech-to-text API key (arrow on the right and blocked out by the blue line).
 
 ![Assistant_TTS_credentials](Assistant_TTS_credentials.png)
 
-Select the ChatbotToSpeech gameobject to see the fields for the Assistant API key, Assistant ID, and Text-to-speech API key. I don't remember where I found the version date as specified by 2019-05-28. It seems to work and it is what I have been using. The IBM cloud API documentation uses 2019-02-29, which also seems to work. I put in 2019-12-25, which also worked. Watson supposedly finds the most recent version at or before the specified date. It would be better to find the correct version date but I haven't motivated myself to do so yet since everything works.
+Select the ChatbotToSpeech gameobject to see the fields for the Assistant API key, Service URL, Version Date, Assistant ID, and Text-to-speech API key. These fields should be filled in with the credentials found as described above. The Dallas region is the default Service URL. Please note that the pic incorrectedly shows the Service URL empty. I don't remember where I found the version date as specified by 2019-05-28. It seems to work and it is what I have been using. The IBM cloud API documentation uses 2019-02-29, which also seems to work. I put in 2019-12-25, which also worked. Watson supposedly finds the most recent version at or before the specified date. It would be better to find the correct version date but I haven't motivated myself to do so since everything works.
 
 
 
