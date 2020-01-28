@@ -50,13 +50,13 @@ To find your text-to-speech credentials, let's start at the IBM Cloud Dashboard:
 
 1. Go to the Navigation drop down menu at the upper left in the Dashboard. Click on it to see the menu and click on Resource list.
 2. In the Resource list, go down to Services and click on your Text-to-speech service.
-3. You should now be at the page showing your credentials. Clicking on the icon towards the right will copy your API key. You don't need to reveal it to copy it.
+3. You should now be at the page showing your credentials. Clicking on the icon towards the right will copy your API key. You don't need to reveal it to copy it. You will also need to copy the Service URL labeled just as "URL."
 
 ![tts_credentials](tts_credentials.gif)
 
 1. 
 
-The speech-to-text API key can be find in a similar manner.
+The speech-to-text API key and URL can be found in a similar manner.
 
 For the Assistant chatbot, we need additional information. To find the necessary credentials, let's start from the Dashboard again:
 
@@ -77,11 +77,11 @@ Where to place the credentials
 
 ![STT_credentials](STT_credentials.png)
 
-Find the SpeechStreaming gameobject under the SpeechToText gameobject (arrow on the left). If you select it, you will see the IAM APIkey field in the Inspector on the right where you should paste your Speech-to-text API key (arrow on the right and blocked out by the blue line).
+Find the SpeechStreaming gameobject under the SpeechToText gameobject (arrow on the left). If you select it, you will see the IAM APIkey field in the Inspector on the right where you should paste your Speech-to-text API key (arrow on the right and blocked out by the blue line). Although not shown, you must also paste in your Service URL.
 
 ![Assistant_TTS_credentials](Assistant_TTS_credentials.png)
 
-Select the ChatbotToSpeech gameobject to see the fields for the Assistant API key, Service URL, Version Date, Assistant ID, and Text-to-speech API key. These fields should be filled in with the credentials found as described above. The Dallas region is the default Service URL. Please note that the pic incorrectedly shows the Service URL empty. I don't remember where I found the version date as specified by 2019-05-28. It seems to work and it is what I have been using. The IBM cloud API documentation uses 2019-02-29, which also seems to work. I put in 2019-12-25, which also worked. Watson supposedly finds the most recent version at or before the specified date. It would be better to find the correct version date but I haven't motivated myself to do so since everything works.
+Select the ChatbotToSpeech gameobject to see the fields for the Assistant API key, Service URL, Version Date, Assistant ID, Text-to-speech API key, and Text-to-speech Service URL. These fields should be filled in with the credentials found as described above. Please note that the pic incorrectedly shows the Service URL for Assistant as empty and does not even show the field for the Text-to-speech Service URL. I don't remember where I found the version date as specified by 2019-05-28. It seems to work and it is what I have been using. The IBM cloud API documentation uses 2019-02-29, which also seems to work. I put in 2019-12-25, which also worked. Watson supposedly finds the most recent version at or before the specified date. It would be better to find the correct version date but I haven't motivated myself to do so since everything works.
 
 
 
