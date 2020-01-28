@@ -2,6 +2,12 @@
 
 Scott Hwang
 
+01/28/2020
+##NOTICE!!!
+Sorry, the program doesn't use the service URL for Assistant correctly so only the default Dallas region works. I will upload a fixed version by tomorrow. I was able to get it to work using the Washington, DC and London regions once I fixed the bug. I will also check to make sure the instructions in the video clip for obtaining the service URL are correct.
+
+--Scott
+
 12/20/2019
 
 ## Introduction
