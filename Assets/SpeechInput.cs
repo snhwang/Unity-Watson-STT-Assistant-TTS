@@ -93,6 +93,10 @@ namespace IBM.Watson.Examples
                 yield return null;
 
             _service = new SpeechToTextService(authenticator);
+            if (!string.IsNullOrEmpty(_serviceUrl))
+            {
+                _service.SetServiceUrl(_serviceUrl);
+            }
             _service.StreamMultipart = true;
 
             StartRecording();
