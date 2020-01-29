@@ -1,16 +1,11 @@
 # 3D Chatbot with IBM Watson Speech-To-Text, Assistant, and Text-To-Speech on Unity
 
 Scott Hwang
+LinkedIn: https://www.linkedin.com/in/snhwang
 01/28/2020
 
 ## Notices
-Still updating things! I will delete this line when it's ready
-
-01/28/2020
-Fixed the bug involving the Service URL mentioned below.
-
-01/28/2020
-Sorry, the program doesn't use the Service URL for Assistant correctly so only the default Dallas region works. I will upload a fixed version by tomorrow. I was able to get it to work using the Washington, DC and London regions once I fixed the bug. I will also check to make sure the instructions in the video clip for obtaining the service URL are correct.
+As of 01/28/2020 7PM CDT time zone, this Unity Project works with Unity 2017.2.8f1, IBM Unity SDK 4.1.1, and Unity SDK core 1.2.0. I'm pretty sure it will work with IBM Unity SDK 4.3.0. You just need to delete the unity-sdk-4.1.1 folder and replace it with unity-sdk-4.3.0. I fixed the mistake of not using the Watson service URLs correctly. So, it should now work with different IBM cloud regions. I've only tried it using the Dallas, Washington DC, and London regions.
 
 ## Introduction
 
@@ -87,4 +82,6 @@ Select the ChatbotToSpeech gameobject to see the fields for the Assistant API ke
 
 Problems and Things to Figure Out
 
-Besides not knowing the correct version date, I have only been able to use Assistants created using the Dallas region. I also tried the Washington, DC region but it didn't work. I tried including the url for the authentication but it still didn't work.
+I still don't know where to find the official version dates.
+
+I fixed the problem about the code only working for the Dallas Watson region. I have confirmed it works using the Dallas, Washington DC, and London regions.
