@@ -1,7 +1,9 @@
 # 3D Chatbot with IBM Watson Speech-To-Text, Assistant, and Text-To-Speech on Unity
 
 Scott Hwang
+
 LinkedIn: https://www.linkedin.com/in/snhwang
+
 01/28/2020
 
 ## Notices
