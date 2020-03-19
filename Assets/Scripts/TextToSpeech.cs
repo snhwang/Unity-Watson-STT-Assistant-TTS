@@ -1,9 +1,15 @@
-/*
+﻿/*
  * Copyright 2020, 2019 Scott Hwang. All Rights Reserved.
- * This code was originally modified from example code  
+ * This code was originally modified from ExampleAssistantV2.cs 
  * in unity-sdk-4.0.0. This continueds to be licensed 
  * under the Apache License, Version 2.0 as noted below.
+ *  * 
+ * I also incorporated the use of the chatbot to execute
+ * commands as demonstrated by:
  * 
+ * https://www.youtube.com/watch?v=OsbV1xqX0hQ
+ * https://github.com/IBM/vr-speech-sandbox-cardboard
+ * https://developer.ibm.com/patterns/create-a-virtual-reality-speech-sandbox/
  */
 
 /**
