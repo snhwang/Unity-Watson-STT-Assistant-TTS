@@ -1,8 +1,13 @@
 
 
 03/18/2020
-Cleaned up the code and tried to make it more modular with separate components and prefabs for
-chat, text-to-speech, and speech-to-text
+I've tried to clean up the code and make it more modular with prefabs for chat, text-to-speech, and speech-to-text. I hope this makes it easier to use. I made use of InputFields to trigger the transfer for text/string data between the modules.
+
+There is now a ChangeLog.txt file where I will keep track of older notices and changes.
+
+The README below needs a lot of updating. It's unchanged since the previous version which is now store in branch v1.
+
+I've started working on a brief tutorial to show how to hook up 3D characters/avatars with Salsa Lipsync to the audio output of text-to-speech.
 
 
 01/28/2020
