@@ -1,0 +1,6 @@
+
+
+03/18/2020
+Cleaned up the code and tried to make it more modular with separate components and prefabs for
+chat, text-to-speech, and speech-to-text
+
