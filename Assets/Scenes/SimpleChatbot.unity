@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -151,11 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf6a15f52e6f5647999b9499ab0c827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tts_apikey: 
-  Assistant_apikey: 
-  serviceUrl: 
+  tts_apikey: 2ArZQkj88wLS0Uis3bWfEwQ8L_m5IDO0hGq2gw1ElAwF
+  tts_serviceUrl: https://stream.watsonplatform.net/text-to-speech/api
+  Assistant_apikey: HO6gKTOstpXZVgGTC4tnisnV3C7lRY9GpAkqeN-iUeWD
+  serviceUrl: https://gateway.watsonplatform.net/assistant/api
   versionDate: 2019-05-28
-  assistantId: 
+  assistantId: 262d13b8-33ef-4275-95bb-774e52309512
   inputSpeech: 
   _testString: 
   inputText: {fileID: 0}
@@ -289,9 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef0d17b7b4bd4c478ab7a86d6fd0ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceUrl: 
+  _serviceUrl: https://stream.watsonplatform.net/speech-to-text/api
   ResultsField: {fileID: 1818643101}
-  _iamApikey: 
+  _iamApikey: OCnIsWFVV8q4cwKOJYMq6Y5dAkQspZshxWjBaE-IBKaR
   _recognizeModel: en-US_BroadbandModel
   bot: {fileID: 223520224}
 --- !u!1 &705507993
