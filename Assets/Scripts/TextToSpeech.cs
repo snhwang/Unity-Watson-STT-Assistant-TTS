@@ -34,7 +34,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Resources;
 using IBM.Cloud.SDK;
 using IBM.Cloud.SDK.Authentication.Iam;
 using IBM.Cloud.SDK.Utilities;
@@ -45,14 +45,17 @@ using UnityEngine.UI;
 
 public class TextToSpeech : MonoBehaviour
 {
-    #region PLEASE SET THESE VARIABLES IN THE INSPECTOR
-    [Space(10)]
-    [Header("IBM Watson Text to Speech")]
     [SerializeField]
-    private string tts_apikey; // API key for IBM Watson text to speech
-    [SerializeField]
-    private string tts_serviceUrl; // Service URL for IBM Watson text to speech
-    #endregion
+    private WatsonSettings settings;
+
+    //#region PLEASE SET THESE VARIABLES IN THE INSPECTOR
+    //[Space(10)]
+    //[Header("IBM Watson Text to Speech")]
+    //[SerializeField]
+    //private string tts_apikey; // API key for IBM Watson text to speech
+    //[SerializeField]
+    //private string tts_serviceUrl; // Service URL for IBM Watson text to speech
+    //#endregion
 
     private TextToSpeechService tts_service; // IBM Watson text to speech service
     private IamAuthenticator tts_authenticator; // IBM Watson text to speech authenticator
@@ -84,6 +87,8 @@ public class TextToSpeech : MonoBehaviour
 
     //[SerializeField]
     private InputField inputField;
+
+    private ResourceManager manager = new ResourceManager(typeof(WatsonSettings));
 
     private void Start()
     {
@@ -145,17 +150,18 @@ public class TextToSpeech : MonoBehaviour
     // Create the IBM text to speech service
     public IEnumerator CreateService()
     {
+        //Debug.Log("Settings: " + manager.GetString("tts_apikey"));
         //  Create credential and instantiate service
-        tts_authenticator = new IamAuthenticator(apikey: tts_apikey);
+        tts_authenticator = new IamAuthenticator(apikey: settings.tts_apikey);
 
         //  Wait for tokendata
         while (!tts_authenticator.CanAuthenticate())
             yield return null;
 
         tts_service = new TextToSpeechService(tts_authenticator);
-        if (!string.IsNullOrEmpty(tts_serviceUrl))
+        if (!string.IsNullOrEmpty(settings.tts_serviceUrl))
         {
-            tts_service.SetServiceUrl(tts_serviceUrl);
+            tts_service.SetServiceUrl(settings.tts_serviceUrl);
         }
     }
 

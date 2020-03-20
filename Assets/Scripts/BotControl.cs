@@ -16,7 +16,9 @@ public class BotControl : MonoBehaviour
     }
     void Update()
     {
-
+        /* Wait for audio clip of the output speech to finish before listening and converting
+         * new input speech
+         */
         if (stt.ServiceReady())
         {
             if (chat.GetStatus() == SimpleBot.ProcessingStatus.Processing || !tts.IsFinished())
@@ -28,6 +30,12 @@ public class BotControl : MonoBehaviour
                 stt.Active = true;
             }
         }
+
+        /* I used to need to keep track of all the processing steps to known when to do
+         * the next step, i.e. when to ask for a chat response and when to convert to audio.
+         * This is now triggered by listeners in InputFields. I still need to keep track
+         * of processing to know when to record or stop recording speech as above.
+         * /
         /*
         if (stt.GetStatus() == SpeechToText.ProcessingStatus.Processed && chat.ServiceReady())
         {

@@ -35,22 +35,24 @@ using UnityEngine.UI;
 
 public class SimpleBot : MonoBehaviour
 {
-    #region PLEASE SET THESE VARIABLES IN THE INSPECTOR
-    [Space(10)]
-    [Header("IBM Watson Assistant")]
-    [Tooltip("The IAM apikey.")]
-    [SerializeField]
-    private string Assistant_apikey; // The apikey for IBM Watson Assistant
-    [Tooltip("The service URL (optional). This defaults to \"https://gateway.watsonplatform.net/assistant/api\"")]
-    [SerializeField]
-    private string serviceUrl;
-    [Tooltip("The version date with which you would like to use the service in the form YYYY-MM-DD.")]
-    [SerializeField]
-    private string versionDate;
-    [Tooltip("The assistantId to run the example.")]
-    [SerializeField]
-    private string assistantId;
-    #endregion
+    private WatsonSettings settings;
+
+    //#region PLEASE SET THESE VARIABLES IN THE INSPECTOR
+    //[Space(10)]
+    //[Header("IBM Watson Assistant")]
+    //[Tooltip("The IAM apikey.")]
+    //[SerializeField]
+    //private string Assistant_apikey; // The apikey for IBM Watson Assistant
+    //[Tooltip("The service URL (optional). This defaults to \"https://gateway.watsonplatform.net/assistant/api\"")]
+    //[SerializeField]
+    //private string serviceUrl;
+    //[Tooltip("The version date with which you would like to use the service in the form YYYY-MM-DD.")]
+    //[SerializeField]
+    //private string versionDate;
+    //[Tooltip("The assistantId to run the example.")]
+    //[SerializeField]
+    //private string assistantId;
+    //#endregion
 
     private AssistantService Assistant_service;
 
@@ -128,26 +130,26 @@ public class SimpleBot : MonoBehaviour
     public IEnumerator CreateService()
     {
 
-        if (string.IsNullOrEmpty(Assistant_apikey))
+        if (string.IsNullOrEmpty(settings.Assistant_apikey))
         {
             throw new IBMException("Please provide Watson Assistant IAM ApiKey for the service.");
         }
 
         //  Create credential and instantiate service
         //            IamAuthenticator authenticator = new IamAuthenticator(apikey: Assistant_apikey, url: serviceUrl);
-        IamAuthenticator authenticator = new IamAuthenticator(apikey: Assistant_apikey);
+        IamAuthenticator authenticator = new IamAuthenticator(apikey: settings.Assistant_apikey);
 
         //  Wait for tokendata
         while (!authenticator.CanAuthenticate())
             yield return null;
 
-        Assistant_service = new AssistantService(versionDate, authenticator);
-        if (!string.IsNullOrEmpty(serviceUrl))
+        Assistant_service = new AssistantService(settings.versionDate, authenticator);
+        if (!string.IsNullOrEmpty(settings.serviceUrl))
         {
-            Assistant_service.SetServiceUrl(serviceUrl);
+            Assistant_service.SetServiceUrl(settings.serviceUrl);
         }
 
-        Assistant_service.CreateSession(OnCreateSession, assistantId);
+        Assistant_service.CreateSession(OnCreateSession, settings.assistantId);
 
         while (!createSessionTested)
         {
@@ -155,6 +157,7 @@ public class SimpleBot : MonoBehaviour
         }
     }
 
+    // Get the "welcome" chat reponse from IBM Watson Assistant
     public IEnumerator Welcome()
     {
         // Set chat processing status to "Processing"
@@ -165,9 +168,7 @@ public class SimpleBot : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log(sessionId);
-        Debug.Log(assistantId);
-        Assistant_service.Message(OnMessage, assistantId, sessionId);
+        Assistant_service.Message(OnMessage, settings.assistantId, sessionId);
         while (!messageTested)
         {
             messageTested = false;
@@ -213,7 +214,7 @@ public class SimpleBot : MonoBehaviour
             }
         };
 
-        Assistant_service.Message(OnMessage, assistantId, sessionId, input: inputMessage);
+        Assistant_service.Message(OnMessage, settings.assistantId, sessionId, input: inputMessage);
 
         while (!messageTested)
         {

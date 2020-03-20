@@ -37,20 +37,21 @@ using IBM.Cloud.SDK.DataTypes;
 
 public class SpeechToText : MonoBehaviour
 {
-    #region PLEASE SET THESE VARIABLES IN THE INSPECTOR
-    [Space(10)]
-    [Header("IBM Watson Speech to Text")]
-    [Tooltip("The IAM apikey.")]
-    [SerializeField]
-    private string _iamApikey;
-    [Tooltip("The service URL (optional). This defaults to \"https://stream.watsonplatform.net/speech-to-text/api\"")]
-    [SerializeField]
-    private string _serviceUrl;
-    [Tooltip("The Model to use. This defaults to en-US_BroadbandModel")]
-    [SerializeField]
-    private string _recognizeModel;
-    [Tooltip("Text field to display the results of streaming.")]
-    #endregion
+
+    
+    //#region PLEASE SET THESE VARIABLES IN THE INSPECTOR
+    //[Space(10)]
+    //[Header("IBM Watson Speech to Text")]
+    //[Tooltip("The IAM apikey.")]
+    //[SerializeField]
+    //private string _iamApikey;
+    //[Tooltip("The service URL (optional). This defaults to \"https://stream.watsonplatform.net/speech-to-text/api\"")]
+    //[SerializeField]
+    //private string _serviceUrl;
+    //[Tooltip("The Model to use. This defaults to en-US_BroadbandModel")]
+    //[SerializeField]
+    //private string _recognizeModel;
+    //#endregion
 
     private int _recordingRoutine = 0;
     private string _microphoneID = null;
@@ -63,6 +64,7 @@ public class SpeechToText : MonoBehaviour
     public enum ProcessingStatus { Idle, Processing, Processed };
     private ProcessingStatus status;
 
+    [Tooltip("Text field to display the results of speech conversion.")]
     [SerializeField]
     private Text spokenText;
 
@@ -75,6 +77,8 @@ public class SpeechToText : MonoBehaviour
     [SerializeField]
     private InputField outputInputField;
     private Text outputText;
+
+    private WatsonSettings settings;
 
     private void Start()
     {
@@ -99,21 +103,21 @@ public class SpeechToText : MonoBehaviour
 
     public IEnumerator CreateService()
     {
-        if (string.IsNullOrEmpty(_iamApikey))
+        if (string.IsNullOrEmpty(settings.stt_apikey))
         {
             throw new IBMException("Please provide IAM ApiKey for the service.");
         }
 
-        IamAuthenticator authenticator = new IamAuthenticator(apikey: _iamApikey);
+        IamAuthenticator authenticator = new IamAuthenticator(apikey: settings.stt_apikey);
 
         //  Wait for tokendata
         while (!authenticator.CanAuthenticate())
             yield return null;
 
         _service = new SpeechToTextService(authenticator);
-        if (!string.IsNullOrEmpty(_serviceUrl))
+        if (!string.IsNullOrEmpty(settings.stt_serviceUrl))
         {
-            _service.SetServiceUrl(_serviceUrl);
+            _service.SetServiceUrl(settings.stt_serviceUrl);
         }
         _service.StreamMultipart = true;
 
@@ -145,7 +149,9 @@ public class SpeechToText : MonoBehaviour
         {
             if (value && !_service.IsListening)
             {
-                _service.RecognizeModel = (string.IsNullOrEmpty(_recognizeModel) ? "en-US_BroadbandModel" : _recognizeModel);
+                _service.RecognizeModel =
+                    (string.IsNullOrEmpty(settings.stt_recognizeModel)
+                    ? "en-US_BroadbandModel" : settings.stt_recognizeModel);
                 _service.DetectSilence = true;
                 _service.EnableWordConfidence = true;
                 _service.EnableTimestamps = true;
