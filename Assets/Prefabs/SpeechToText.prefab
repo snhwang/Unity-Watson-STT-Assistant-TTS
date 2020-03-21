@@ -51,9 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef0d17b7b4bd4c478ab7a86d6fd0ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _iamApikey: 
-  _serviceUrl: 
-  _recognizeModel: en-US_BroadbandModel
+  settings: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5, type: 2}
+  model: 1
   spokenText: {fileID: 0}
   targetInputField: {fileID: 0}
   targetGameObject: {fileID: 0}

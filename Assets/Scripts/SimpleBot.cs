@@ -35,24 +35,8 @@ using UnityEngine.UI;
 
 public class SimpleBot : MonoBehaviour
 {
+    [SerializeField]
     private WatsonSettings settings;
-
-    //#region PLEASE SET THESE VARIABLES IN THE INSPECTOR
-    //[Space(10)]
-    //[Header("IBM Watson Assistant")]
-    //[Tooltip("The IAM apikey.")]
-    //[SerializeField]
-    //private string Assistant_apikey; // The apikey for IBM Watson Assistant
-    //[Tooltip("The service URL (optional). This defaults to \"https://gateway.watsonplatform.net/assistant/api\"")]
-    //[SerializeField]
-    //private string serviceUrl;
-    //[Tooltip("The version date with which you would like to use the service in the form YYYY-MM-DD.")]
-    //[SerializeField]
-    //private string versionDate;
-    //[Tooltip("The assistantId to run the example.")]
-    //[SerializeField]
-    //private string assistantId;
-    //#endregion
 
     private AssistantService Assistant_service;
 
@@ -122,9 +106,6 @@ public class SimpleBot : MonoBehaviour
         inputField = gameObject.AddComponent<InputField>();
         inputField.textComponent = gameObject.AddComponent<Text>();
         inputField.onValueChanged.AddListener(delegate { Runnable.Run(ProcessChat(inputField.text)); });
-
-
-
     }
 
     public IEnumerator CreateService()
@@ -239,7 +220,11 @@ public class SimpleBot : MonoBehaviour
     protected virtual void OnMessage(DetailedResponse<MessageResponse> response, IBMError error)
     {
         textResponse = response.Result.Output.Generic[0].Text.ToString();
-        outputField.text = textResponse;
+
+        if (outputField != null)
+        {
+            outputField.text = textResponse;
+        }
 
         // Check if the target GameObject has an InputField then place text into it.
         if (targetGameObject != null)

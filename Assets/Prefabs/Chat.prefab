@@ -43,10 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf6a15f52e6f5647999b9499ab0c827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Assistant_apikey: 
-  serviceUrl: 
-  versionDate: 2019-05-28
-  assistantId: 
+  settings: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5, type: 2}
   textResponse: 
   outputField: {fileID: 0}
   outputText: {fileID: 0}

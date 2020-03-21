@@ -35,8 +35,6 @@ public class WatsonSettings : ScriptableObject
     public string stt_apikey;
     [Tooltip("The service URL (optional). This defaults to \"https://stream.watsonplatform.net/speech-to-text/api\"")]
     public string stt_serviceUrl;
-    [Tooltip("The Model to use. This defaults to en-US_BroadbandModel")]
-    public string stt_recognizeModel;
 
 }
 

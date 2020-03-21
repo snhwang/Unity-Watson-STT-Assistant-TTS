@@ -37,21 +37,21 @@ using IBM.Cloud.SDK.DataTypes;
 
 public class SpeechToText : MonoBehaviour
 {
+    [SerializeField]
+    private WatsonSettings settings;
 
-    
-    //#region PLEASE SET THESE VARIABLES IN THE INSPECTOR
-    //[Space(10)]
-    //[Header("IBM Watson Speech to Text")]
-    //[Tooltip("The IAM apikey.")]
-    //[SerializeField]
-    //private string _iamApikey;
-    //[Tooltip("The service URL (optional). This defaults to \"https://stream.watsonplatform.net/speech-to-text/api\"")]
-    //[SerializeField]
-    //private string _serviceUrl;
-    //[Tooltip("The Model to use. This defaults to en-US_BroadbandModel")]
-    //[SerializeField]
-    //private string _recognizeModel;
-    //#endregion
+    /* I have only included the English language recognition models
+     * (UK and US versions). Others can be found at:
+     * https://cloud.ibm.com/docs/speech-to-text?topic=speech-to-text-models#models
+     */
+    public enum IBM_LanguageModels
+    {
+        GB_BroadbandModel,
+        US_BroadbandModel
+    }
+    [SerializeField]
+    private IBM_LanguageModels model = IBM_LanguageModels.US_BroadbandModel;
+    private string languageModel;
 
     private int _recordingRoutine = 0;
     private string _microphoneID = null;
@@ -78,13 +78,15 @@ public class SpeechToText : MonoBehaviour
     private InputField outputInputField;
     private Text outputText;
 
-    private WatsonSettings settings;
-
     private void Start()
     {
         LogSystem.InstallDefaultReactors();
         Runnable.Run(CreateService());
         status = ProcessingStatus.Idle;
+
+        // You can't use hyphens in enums, so the name of the model is completely defined here.
+        languageModel = "en-" + model;
+        
 
         outputInputField = gameObject.GetComponent<InputField>();
         if (outputInputField == null)
@@ -150,8 +152,8 @@ public class SpeechToText : MonoBehaviour
             if (value && !_service.IsListening)
             {
                 _service.RecognizeModel =
-                    (string.IsNullOrEmpty(settings.stt_recognizeModel)
-                    ? "en-US_BroadbandModel" : settings.stt_recognizeModel);
+                    (string.IsNullOrEmpty(languageModel)
+                    ? "en-US_BroadbandModel" : languageModel);
                 _service.DetectSilence = true;
                 _service.EnableWordConfidence = true;
                 _service.EnableTimestamps = true;

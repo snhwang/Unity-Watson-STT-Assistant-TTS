@@ -1,15 +1,9 @@
 ﻿/*
  * Copyright 2020, 2019 Scott Hwang. All Rights Reserved.
- * This code was originally modified from ExampleAssistantV2.cs 
+ * This code was originally modified from example code 
  * in unity-sdk-4.0.0. This continueds to be licensed 
  * under the Apache License, Version 2.0 as noted below.
- *  * 
- * I also incorporated the use of the chatbot to execute
- * commands as demonstrated by:
- * 
- * https://www.youtube.com/watch?v=OsbV1xqX0hQ
- * https://github.com/IBM/vr-speech-sandbox-cardboard
- * https://developer.ibm.com/patterns/create-a-virtual-reality-speech-sandbox/
+ *   
  */
 
 /**
@@ -34,7 +28,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Resources;
 using IBM.Cloud.SDK;
 using IBM.Cloud.SDK.Authentication.Iam;
 using IBM.Cloud.SDK.Utilities;
@@ -48,14 +41,26 @@ public class TextToSpeech : MonoBehaviour
     [SerializeField]
     private WatsonSettings settings;
 
-    //#region PLEASE SET THESE VARIABLES IN THE INSPECTOR
-    //[Space(10)]
-    //[Header("IBM Watson Text to Speech")]
-    //[SerializeField]
-    //private string tts_apikey; // API key for IBM Watson text to speech
-    //[SerializeField]
-    //private string tts_serviceUrl; // Service URL for IBM Watson text to speech
-    //#endregion
+    /* The voices provided by IBM. Voices with V3 are the more advance
+     * "neural" voices. You can find a more complete list including voices
+     * for other languages at:
+     * https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices#voices
+     */
+    public enum IBM_voices {
+        GB_KateV3Voice,
+        US_AllisonVoice,
+        US_AllisonV3Voice,
+        US_EmilyV3Voice,
+        US_HenryV3Voice,
+        US_KevinV3Voice,
+        US_LisaVoice,
+        US_LisaV3Voice,
+        US_MichaelVoice,
+        US_MichaelV3Voice,
+        US_OliviaV3Voice
+    }
+    [SerializeField]
+    private IBM_voices voice = IBM_voices.US_KevinV3Voice;
 
     private TextToSpeechService tts_service; // IBM Watson text to speech service
     private IamAuthenticator tts_authenticator; // IBM Watson text to speech authenticator
@@ -87,8 +92,6 @@ public class TextToSpeech : MonoBehaviour
 
     //[SerializeField]
     private InputField inputField;
-
-    private ResourceManager manager = new ResourceManager(typeof(WatsonSettings));
 
     private void Start()
     {
@@ -124,7 +127,6 @@ public class TextToSpeech : MonoBehaviour
         inputField = gameObject.AddComponent<InputField>();
         inputField.textComponent = gameObject.AddComponent<Text>();
         inputField.onValueChanged.AddListener(delegate { AddTextToQueue(inputField.text); });
-
     }
 
     private void Update()
@@ -150,7 +152,6 @@ public class TextToSpeech : MonoBehaviour
     // Create the IBM text to speech service
     public IEnumerator CreateService()
     {
-        //Debug.Log("Settings: " + manager.GetString("tts_apikey"));
         //  Create credential and instantiate service
         tts_authenticator = new IamAuthenticator(apikey: settings.tts_apikey);
 
@@ -205,9 +206,7 @@ public class TextToSpeech : MonoBehaviour
                 audioQueue.Enqueue(clip);
             },
             text: nextText,
-            //voice: "en-US_AllisonV3Voice",
-            voice: "en-US_MichaelV3Voice",
-            //voice: "en-US_MichaelVoice",
+            voice: "en-" + voice,
             accept: "audio/wav"
         );
 
