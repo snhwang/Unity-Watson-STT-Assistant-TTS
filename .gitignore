@@ -11,7 +11,7 @@
 /[Uu]ser[Ss]ettings/
 
 # Settings asset file
-WatsonSettings.asset
+/[Aa]ssets/**/WatsonSettings.asset
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
