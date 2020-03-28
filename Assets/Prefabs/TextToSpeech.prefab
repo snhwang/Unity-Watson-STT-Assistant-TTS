@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc145a494038d8459c22ba26a36b1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5, type: 2}
+  settings: {fileID: 11400000, guid: d2a1c7adcfbd42145a1262ba0e30150b, type: 2}
   voice: 5
   outputAudioSource: {fileID: 0}
   externalInputField: {fileID: 0}

@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -127,11 +128,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6238918168471857611, guid: 7dabfb29b87287c4c8b6931d44950288,
+    - target: {fileID: 2697185846482884451, guid: 7dabfb29b87287c4c8b6931d44950288,
         type: 3}
-      propertyPath: m_Name
-      value: SpeechToText
-      objectReference: {fileID: 0}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: d2a1c7adcfbd42145a1262ba0e30150b,
+        type: 2}
     - target: {fileID: 5856343112215493929, guid: 7dabfb29b87287c4c8b6931d44950288,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,6 +238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238918168471857611, guid: 7dabfb29b87287c4c8b6931d44950288,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeechToText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dabfb29b87287c4c8b6931d44950288, type: 3}
@@ -377,8 +384,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886058100}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10

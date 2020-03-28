@@ -60,7 +60,7 @@ public class TextToSpeech : MonoBehaviour
         US_OliviaV3Voice
     }
     [SerializeField]
-    private IBM_voices voice = IBM_voices.US_KevinV3Voice;
+    private IBM_voices voice = IBM_voices.US_MichaelV3Voice;
 
     private TextToSpeechService tts_service; // IBM Watson text to speech service
     private IamAuthenticator tts_authenticator; // IBM Watson text to speech authenticator

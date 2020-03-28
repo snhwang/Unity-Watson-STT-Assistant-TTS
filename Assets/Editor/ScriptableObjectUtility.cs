@@ -22,7 +22,7 @@ public static class ScriptableObjectUtility
         string path = AssetDatabase.GetAssetPath(Selection.activeObject);
         if (path == "")
         {
-            path = "Assets";
+            path = "Assets/Resources/";
         }
         else if (Path.GetExtension(path) != "")
         {

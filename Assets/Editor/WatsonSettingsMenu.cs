@@ -9,6 +9,9 @@
 using UnityEditor;
 using UnityEngine;
 
+
+/*
+[CreateAssetMenu(fileName = "WatsonSettings.asset", menuName = "Watson Settings", order = 1)]
 public class WatsonSettings : ScriptableObject
 {
     [Space(10)]
@@ -34,4 +37,24 @@ public class WatsonSettings : ScriptableObject
     [Tooltip("The service URL (optional). This defaults to \"https://stream.watsonplatform.net/speech-to-text/api\"")]
     public string stt_serviceUrl;
 
+}
+*/
+public class WatsonSettingsMenu
+{
+    [MenuItem("SNH-Watson/Create New Watson Settings Asset")]
+    public static void CreateAsset()
+    {
+        ScriptableObjectUtility.CreateAsset<WatsonSettings>();
+    }
+
+    [MenuItem("SNH-Watson/Highlight IBM Watson Settings")]
+    // Pings PhotonServerSettings and makes it selected (show in Inspector)
+    private static void HighlightSettings()
+    {
+        WatsonSettings settings =
+            (WatsonSettings)Resources.Load("WatsonSettings", typeof(WatsonSettings));
+        Selection.objects = new UnityEngine.Object[] { settings };
+        EditorGUIUtility.PingObject(settings);
+
+    }
 }
