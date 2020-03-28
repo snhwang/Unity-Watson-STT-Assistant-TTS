@@ -50,10 +50,10 @@ public class SimpleBot : MonoBehaviour
     public string textResponse = String.Empty;
 
     [SerializeField]
-    private InputField outputField;
+    private InputField targetInputField;
 
     [SerializeField]
-    private Text outputText;
+    private Text targetText;
 
     //Keep track of whether IBM Watson Assistant should process input or is
     //processing input to create a chat response.
@@ -221,9 +221,9 @@ public class SimpleBot : MonoBehaviour
     {
         textResponse = response.Result.Output.Generic[0].Text.ToString();
 
-        if (outputField != null)
+        if (targetInputField != null)
         {
-            outputField.text = textResponse;
+            targetInputField.text = textResponse;
         }
 
         // Check if the target GameObject has an InputField then place text into it.

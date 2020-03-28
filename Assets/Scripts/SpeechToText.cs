@@ -1,10 +1,10 @@
 /*
  * Copyright 2019 Scott Hwang. All Rights Reserved.
  * This code was modified slightly from ExampleStreaming.cs 
- * in unity-sdk-4.0.0. This continueds to be licensed 
+ * in unity-sdk-4.0.0. This continues to be licensed 
  * under the Apache License, Version 2.0 as noted below.
  * 
- * The only change is in the funcion OnRecognize().
+ * The only significant change is in the function OnRecognize().
  */
 
 /**
@@ -80,6 +80,7 @@ public class SpeechToText : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(gameObject.GetComponent<SpeechToText>().settings);
         LogSystem.InstallDefaultReactors();
         Runnable.Run(CreateService());
         status = ProcessingStatus.Idle;
@@ -101,6 +102,7 @@ public class SpeechToText : MonoBehaviour
 
         }
 
+        var temp = GameObject.Find("WatsonSettings").GetComponent<WatsonSettings>();
     }
 
     public IEnumerator CreateService()
@@ -291,10 +293,6 @@ public class SpeechToText : MonoBehaviour
                             {
                                 target.text = text;
                             }
-                        }
-                        if (outputInputField != null)
-                        {
-                            outputInputField.text = text;
                         }
                         status = ProcessingStatus.Processed;
                     }
