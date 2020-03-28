@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf6a15f52e6f5647999b9499ab0c827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5, type: 2}
+  settings: {fileID: 11400000, guid: 9147c0fb851f1e0488e6e0056eaf83dc, type: 2}
   textResponse: 
   targetInputField: {fileID: 0}
   targetText: {fileID: 0}

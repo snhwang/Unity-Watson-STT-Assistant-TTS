@@ -40,89 +40,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8892627308917165804}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_TextComponent
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddTextToQueue
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5017974539503883475, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
         type: 3}
       propertyPath: m_Name
       value: TextToSpeech
       objectReference: {fileID: 0}
-    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -435.0633
-      objectReference: {fileID: 0}
-    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -213.55807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: spokenText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: source
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: inputField
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: outputAudioSource
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: triggerType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: voice
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
-        type: 3}
-      propertyPath: settings
-      value: 
-      objectReference: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5,
-        type: 2}
     - target: {fileID: 5017974539503883501, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -177,6 +99,72 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: spokenText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: inputField
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: outputAudioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: triggerType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: voice
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 9147c0fb851f1e0488e6e0056eaf83dc,
+        type: 2}
+    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -435.0633
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -213.55807
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -297,31 +285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8892627308917165804}
     m_Modifications:
-    - target: {fileID: 6238918168471857611, guid: 7dabfb29b87287c4c8b6931d44950288,
-        type: 3}
-      propertyPath: m_Name
-      value: SpeechToText
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238918168471857611, guid: 7dabfb29b87287c4c8b6931d44950288,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856343112215493929, guid: 7dabfb29b87287c4c8b6931d44950288,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856343112215493929, guid: 7dabfb29b87287c4c8b6931d44950288,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -436
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856343112215493929, guid: 7dabfb29b87287c4c8b6931d44950288,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -215
-      objectReference: {fileID: 0}
     - target: {fileID: 2697185846482884451, guid: 7dabfb29b87287c4c8b6931d44950288,
         type: 3}
       propertyPath: ResultsField
@@ -351,12 +314,27 @@ PrefabInstance:
         type: 3}
       propertyPath: settings
       value: 
-      objectReference: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5,
+      objectReference: {fileID: 11400000, guid: 9147c0fb851f1e0488e6e0056eaf83dc,
         type: 2}
     - target: {fileID: 4967772646860381635, guid: 7dabfb29b87287c4c8b6931d44950288,
         type: 3}
       propertyPath: m_TextComponent
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856343112215493929, guid: 7dabfb29b87287c4c8b6931d44950288,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856343112215493929, guid: 7dabfb29b87287c4c8b6931d44950288,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -436
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856343112215493929, guid: 7dabfb29b87287c4c8b6931d44950288,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -215
       objectReference: {fileID: 0}
     - target: {fileID: 6238918168471857609, guid: 7dabfb29b87287c4c8b6931d44950288,
         type: 3}
@@ -412,6 +390,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238918168471857611, guid: 7dabfb29b87287c4c8b6931d44950288,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeechToText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238918168471857611, guid: 7dabfb29b87287c4c8b6931d44950288,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6495996962094335241, guid: 7dabfb29b87287c4c8b6931d44950288, type: 3}

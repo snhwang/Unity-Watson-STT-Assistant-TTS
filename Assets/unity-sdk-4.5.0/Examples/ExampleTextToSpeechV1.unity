@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -150,8 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ff781e4ff1146729663a093b169fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iamApikey: 2ArZQkj88wLS0Uis3bWfEwQ8L_m5IDO0hGq2gw1ElAwF
-  serviceUrl: https://stream.watsonplatform.net/text-to-speech/api
+  iamApikey: 
+  serviceUrl: 
   textInput: {fileID: 1552819768}
 --- !u!224 &275913467
 RectTransform:

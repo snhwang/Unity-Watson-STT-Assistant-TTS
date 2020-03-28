@@ -132,7 +132,7 @@ PrefabInstance:
         type: 3}
       propertyPath: settings
       value: 
-      objectReference: {fileID: 11400000, guid: d2a1c7adcfbd42145a1262ba0e30150b,
+      objectReference: {fileID: 11400000, guid: 9147c0fb851f1e0488e6e0056eaf83dc,
         type: 2}
     - target: {fileID: 5856343112215493929, guid: 7dabfb29b87287c4c8b6931d44950288,
         type: 3}

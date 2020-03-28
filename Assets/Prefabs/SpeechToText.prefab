@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef0d17b7b4bd4c478ab7a86d6fd0ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5, type: 2}
+  settings: {fileID: 11400000, guid: 9147c0fb851f1e0488e6e0056eaf83dc, type: 2}
   model: 1
   spokenText: {fileID: 0}
   targetInputField: {fileID: 0}
