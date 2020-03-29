@@ -17,39 +17,39 @@ I've added a small menu to the Unity Editor call SNH-Watson. This will create a 
 
 I've been trying to figure out how to keep API keys safe if an app is distributed. So, I'm turning this into something you can run from a server where all the API keys can be kept away from client apps. So far, I've only made this work for text-to-speech.
 
-I still need to update the instructions below.
-
 Please see Changelog.txt for other Notes.
 
 ## Introduction
 
-The code here implements speech-to-text conversion, a conversational chatbot, and text-to-speech conversion using IBM Watson. This is basically an update for the the very helpful tutorial provided as an IBM developerWorks Recipe (https://developer.ibm.com/recipes/tutorials/create-a-3d-digital-human-with-ibm-watson-assistant-and-unity3d/). Following the instructions of the IBM Recipe doesn't work if you use the current versions of all the components. It was still very helpful to know all the software components I needed to create the chatbot. The code here only includes the audio and text components. As was done in the Recipe, I have used this in conjunction with SALSA LipSync (https://assetstore.unity.com/packages/tools/animation/salsa-lipsync-suite-148442) and a 3D model to create a 3D visual chatbot with moving lips during speech. I also initially used the free UMA 2 Unity Multipurpose Avatar (https://assetstore.unity.com/packages/3d/characters/uma-2-unity-multipurpose-avatar-35611). SALSA LipSync is not a free asset, so I removed it for purposes of posting it to the public. Since the lips weren't moving, it was pointless to have the 3D Avatar, so I removed it too. In addition to UMA 2, I have used this with other 3D models compatible with SALSA, including models from Reallusion and Daz3D. I will discuss putting in the 3D model at the end.
+The code here implements speech-to-text conversion, a conversational chatbot, and text-to-speech conversion using IBM Watson. This is basically an update for the the very helpful tutorial provided as an IBM DeveloperWorks Recipe (https://developer.ibm.com/recipes/tutorials/create-a-3d-digital-human-with-ibm-watson-assistant-and-unity3d/). Following the instructions of the IBM Recipe didn't work for me because some of the components it used had been updated and changed. However, it was still very helpful to know all the software components I needed to create the chatbot. It may have been updated by now.
 
-The following clip shows a demo using the chatbot with a 3D character model and SALSA LipSync:
+The code here only includes the audio and text components. As was done in the Recipe, I have used this in conjunction with SALSA LipSync (https://assetstore.unity.com/packages/tools/animation/salsa-lipsync-suite-148442) and a 3D model to create a 3D visual chatbot with moving lips during speech. I also initially used the free UMA 2 Unity Multipurpose Avatar (https://assetstore.unity.com/packages/3d/characters/uma-2-unity-multipurpose-avatar-35611). SALSA LipSync is not a free asset, so I removed it for purposes of posting it to the public. Since the lips weren't moving, it was pointless to have the 3D Avatar, so I removed it too. In addition to UMA 2, I have used this with other 3D models compatible with SALSA, including models from Reallusion and Daz3D.
+
+The following clip shows a demo of one of my earliest working versions using the chatbot with a 3D character model and SALSA LipSync:
   https://www.youtube.com/watch?v=tScSVz7OKJM&feature=youtu.be
 
 
 ## Implementation
 
-I implemented this code using Unity 2019.2.8f1. This is the only version that I know the code works with. I briefly tried to upgrade this to 2019.2.16f1 but it didn't work. It could be a very simple and easily fixed problem but I didn't look into it yet. 
+The current code is a Unity 2019.3.7f1 project. The V1 and V2 branches were developed with Unity 2019.2.8f1.  
 
-This code works with the most current available version of IBM unity-sdk (version 4.1.1, https://github.com/watson-developer-cloud/unity-sdk) and unity-sdk-core (version 1.2.0, https://github.com/IBM/unity-sdk-core/). However, the code was originally modified from code provided with  unity-sdk.4.0.0 which I was using in conjunction with unity-sdk-core-1.0.0. I have updated the sdk's and the code still works. The folders unity-sdk-4.1.1 and unity-sdk-core-1.0.0 should be in the Assets folder. If you try updating the SDKs in the future, you should delete these folders and replace them with the new ones.
+This code uses the most current available versions of the IBM unity-sdk (version 4.5.0, https://github.com/watson-developer-cloud/unity-sdk) and of unity-sdk-core (version 1.2.0, https://github.com/IBM/unity-sdk-core/). However, the code was originally modified from code provided with unity-sdk.4.0.0 and unity-sdk-core-1.0.0.
 
-The script SpeechInput.cs is only slightly modified from ExampleStreaming.cs from unity-sdk-4.0.0. ExampleStreaming.cs continuously listens for speech and uses Watson speech-to-text to convert it to text. It will listen until the user stops after completing a phrase or sentence. I modified the function OnRecognize() with a few lines of code such that when the phrase of speech is determined to be finalized, three things occur:
+Since V1, I've tried to clean up the code and make it more modular. There are now 3 main prefabs in the Assets/Prefabs folder: 1) SpeechToText.prefab, 2) TextToSpeech.prefab, and 3) Chat.prefab. Chat is based on IBM Watson Assistant. Each has a primary script: 1) SpeechToText.cs, 2) TextToSpeech.cs, and 3) SimpleBot.cs. I should probably make the naming consistent. I'm thinking of changing Chat to Assistant to match IBM's naming. There is a CommandBot.cs script to since I am making a version that will not only chat with you but will perform commands in reponse to your speech. This was also based on ideas from code on github (https://github.com/IBM/vr-speech-sandbox-cardboard).
 
-1. Audio recording is made inactive to prevent the bot from recording its own speech.
-2. The input text field for the chat bot is set to the text converted from the speech.
-3. The processing status of the bot is set to "Process" so that it knows that it should send the text to IBM Watson Assistant to determine a text response 
+SpeechToText.cs is only slightly modified from ExampleStreaming.cs from unity-sdk-4.0.0. The SpeechToText component listens for speech and uses Watson speech-to-text to convert it to text. The only significant change from the original code is  a modification of OnRecognize() to handle the text that was converted from speech.
 
-The script SimpleBot.cs is modified from ExampleAssistantV2.cs which originally providing testing for Unity with IBM Watson Assistant. The tests involved sending text messages to and receiving text responses from Assistant. I added in an IBM Watson text-to-speech service to convert the text to speech as was done in the original Recipe. When the speech is processed the status is set to "Finished" and the audio recording for speech is re-activated.
+The scripts for the TextToSpeech and Chat components were also largely adapted from example code from the IBM Unity SDK 4.0.0. SimpleBot.cs was originally modified from ExampleAssistantV2.cs in the SDK. TextToSpeech and Chat was mixed together in one script in my earliest versions by have now been separated into 2 components.
 
-I also have a version where I incorporated commands to be initated by the chatbot as was done periouvsly at:
+The most recent versions have undergone more changes to make them hopefully easier to link together. Since we are basically interesting in moving text between the 3 components, I have used InputFields as a means of linking them together. InputFields are convenient for entering text and can be used to trigger actions whenever the text changes or when editing is complete. Basically, the output text from one component can be placed into an InputField to trigger the activation of the next component.
 
-https://github.com/IBM/vr-speech-sandbox-cardboard
+Depending on which modules are used, some helper scripts are also needed. For example, for a chatbot that uses all three components we need to make sure the chatbot is not recording audio while the bot is speaking so it doesn't record itself.
 
 
 
 ## Setting up IBM Watson Services
+
+Unity enables you to add menus directly to the Editor. I create a simple menu named SNH-Watson which you should be able to see in the menu bar at the top of the editor. It just has 2 functions. One menu item will highlight the file WatsonSettings.asset. The API keys and other credentials and identifiers for the Watson services should now all be placed in this asset by setting the values in the Unity inspector. The other menu item will create additional settings assets in the Assets/Resources folder. This might be helpful if you create multiple different bots on Watson. The prefabs have settings slots in the Unity inspector that are set to the WatsonSettings.asset in the Resources folder. It his is deleted, the link with the prefabs will likely be lost. You can use the menu to create a new settings asset and drag it over the corresponding settings slots using the Unity inspector.  
 
 I'll assume you already created your IBM Watson Text-To-Speech, Assistant, and Speech-To-Text services.
 
@@ -82,20 +82,14 @@ For the Assistant chatbot, we need additional information. To find the necessary
 
 
 
-Where to place the credentials
+Once you have your Watson credentials, select WatsonSettings.asset (or other settings asset) in the Project, which should be in the Assets/Resources folder unless you moved it. Cut and paste your credentials into the appropriate slots in the Unity inspector. I apologize for not having a video for this yet.
 
-![STT_credentials](STT_credentials.png)
-
-Find the SpeechStreaming gameobject under the SpeechToText gameobject (arrow on the left). If you select it, you will see the IAM APIkey field in the Inspector on the right where you should paste your Speech-to-text API key (arrow on the right and blocked out by the blue line). Although not shown, you must also paste in your Service URL.
-
-![Assistant_TTS_credentials](Assistant_TTS_credentials.png)
-
-Select the ChatbotToSpeech gameobject to see the fields for the Assistant API key, Service URL, Version Date, Assistant ID, Text-to-speech API key, and Text-to-speech Service URL. These fields should be filled in with the credentials found as described above. Please note that the pic incorrectedly shows the Service URL for Assistant as empty and does not even show the field for the Text-to-speech Service URL. I don't remember where I found the version date as specified by 2019-05-28. It seems to work and it is what I have been using. The IBM cloud API documentation uses 2019-02-29, which also seems to work. I put in 2019-12-25, which also worked. Watson supposedly finds the most recent version at or before the specified date. It would be better to find the correct version date but I haven't motivated myself to do so since everything works.
+I don't remember where I found the version date of 2019-05-28. It seems to work and it is what I have been using. The IBM cloud API documentation uses 2019-02-29, which also seems to work. I put in 2019-12-25, which also worked. Watson supposedly finds the most recent version at or before the specified date. It would be better to find the correct version date but I haven't motivated myself to do so since everything works.
 
 
 
-Problems and Things to Figure Out
+### Problems and Things to Figure Out
 
 I still don't know where to find the official version dates.
 
-I fixed the problem about the code only working for the Dallas Watson region. I have confirmed it works using the Dallas, Washington DC, and London regions.
+
