@@ -4,16 +4,22 @@ Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
 
-03/18/2020
+03/28/2020
 
-## Notices
-I've tried to clean up the code and make it more modular with prefabs for chat, text-to-speech, and speech-to-text. I hope this makes it easier to use. I made use of InputFields to trigger the transfer for text/string data between the modules.
+## Latest Note
 
-There is now a ChangeLog.txt file where I will keep track of older notices and changes.
+3/28/2020
+The Unity project was updated to Unity 2019.3.7f1.
 
-The README below needs a lot of updating. It's unchanged since the previous version which is now store in branch v1.
+The ibm Unity SDK was updated to the latest version 4.5.0. The Unity SDK core is still at 1.2.0.
 
-I've started working on a brief tutorial to show how to hook up 3D characters/avatars with Salsa Lipsync to the audio output of text-to-speech.
+I've added a small menu to the Unity Editor call SNH-Watson. This will create a scriptable object named WatsonSetting.asset. This will be the the Assets/Resources folder. All the API keys and other credentials are now placed in this asset. This is more convenient but if you delete it by accident, the link to the prefabs is lost. Just create a new WatsonSettings file with the menu and drag and drop it into the settings slot in each of the prefabs for text-to-speech, speech-to-text, and chat in the inspector.
+
+I've been trying to figure out how to keep API keys safe if an app is distributed. So, I'm turning this into something you can run from a server where all the API keys can be kept away from client apps. So far, I've only made this work for text-to-speech.
+
+I still need to update the instructions below.
+
+Please see Changelog.txt for other Notes.
 
 ## Introduction
 
