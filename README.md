@@ -6,7 +6,12 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 
 03/28/2020
 
-## Latest Note
+## Latest Notes
+
+3/30/2020
+I have a first draft of a tutorial showing how to incorporate the Unity Multipurpose Avatar (UMA 2) and SALSA lipsync to create a 3D chatbot. I used the text-to-speech services in this project to generate the audio for the tutorial:
+
+https://youtu.be/m39KGVmi0GI
 
 3/28/2020
 The Unity project was updated to Unity 2019.3.7f1.
