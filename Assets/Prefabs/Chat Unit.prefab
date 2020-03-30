@@ -128,13 +128,13 @@ PrefabInstance:
     - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
         type: 3}
       propertyPath: voice
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
         type: 3}
       propertyPath: settings
       value: 
-      objectReference: {fileID: 11400000, guid: 9147c0fb851f1e0488e6e0056eaf83dc,
+      objectReference: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5,
         type: 2}
     - target: {fileID: 5359342537202239461, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
         type: 3}
@@ -264,6 +264,12 @@ PrefabInstance:
       propertyPath: targetGameObject
       value: 
       objectReference: {fileID: 2071180725607596335}
+    - target: {fileID: 2952600816569817465, guid: cea6ac8b1a898d34b850b57300058000,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cea6ac8b1a898d34b850b57300058000, type: 3}
 --- !u!1 &6421326735687832933 stripped
@@ -314,7 +320,7 @@ PrefabInstance:
         type: 3}
       propertyPath: settings
       value: 
-      objectReference: {fileID: 11400000, guid: 9147c0fb851f1e0488e6e0056eaf83dc,
+      objectReference: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5,
         type: 2}
     - target: {fileID: 4967772646860381635, guid: 7dabfb29b87287c4c8b6931d44950288,
         type: 3}

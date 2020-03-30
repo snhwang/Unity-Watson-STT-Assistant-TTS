@@ -102,7 +102,7 @@ public class SpeechToText : MonoBehaviour
 
         }
 
-        var temp = GameObject.Find("WatsonSettings").GetComponent<WatsonSettings>();
+        //var temp = GameObject.Find("WatsonSettings").GetComponent<WatsonSettings>();
     }
 
     public IEnumerator CreateService()
