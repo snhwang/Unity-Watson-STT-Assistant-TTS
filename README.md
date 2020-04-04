@@ -4,14 +4,16 @@ Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
 
-03/28/2020
+04/04/2020
 
 ## Latest Notes
 
-4/4/2020
+04/04/2020
+
 It looks like the IBM cloud API documentation has been updated, at least for the portions of interest (text-to-speech, speech-to-text, and Assistant). Other sections are also likely updated. It now has code for multiple languages including C#/Unity that you can just copy with a convenient button and paste into your project. In the near future, I will check the code I obtained from examples contained in their earlier version of the SDK and clean it up where needed. It seems that the latest version for Assistant is now 2020-04-01, so I will also update this. I wish they had this last year! But, I still appreciate it. I was able to reproduce the Watson functionality of this Unity project in a Go project in less than an hour even though I hardly know the languages.
 
-3/30/2020
+03/30/2020
+
 I have a first draft of a tutorial showing how to incorporate the Unity Multipurpose Avatar (UMA 2) and SALSA lipsync to create a 3D chatbot. I used the text-to-speech services in this project to generate the audio for the tutorial:
 
 https://youtu.be/m39KGVmi0GI
