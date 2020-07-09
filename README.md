@@ -4,9 +4,11 @@ Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
 
-04/04/2020
+07/09/2020
 
 ## Latest Notes
+07/05/2020
+Updated Unity to latest LTS version: 2019.4.3f1. Also, updated to the latest IBM SDKs: unity-sdk-4.7.1 and unity-sdk-core-1.2.1. It seems to work without any other changes.
 
 04/04/2020
 
