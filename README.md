@@ -7,6 +7,9 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 07/09/2020
 
 ## Latest Notes
+10/11/2020
+I created a new YouTube video which just focuses on how to set up the text-to-speech portion of this project: https://youtu.be/Yrtgig6qdhU
+
 07/05/2020
 Updated Unity to latest LTS version: 2019.4.3f1. Also, updated to the latest IBM SDKs: unity-sdk-4.7.1 and unity-sdk-core-1.2.1. It seems to work without any other changes.
 
