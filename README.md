@@ -4,14 +4,21 @@ Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
 
-11/26/2020
+11/17/2020
 
 ## Latest Notes
 
 
-11/26/2020
+11/17/2020
+Some people have been trying to use the inccorect Service URL parameter for the Watson Assistant credentials. You should use the Service URL found on the first page when you open the specific Assitant as shon here:
 
 ![Correct_Assistant_URL](Correct_Assistant_Service_URL.jpg)
+
+The URL found on the  "Assistant settings" page under "API details" is not correct (for this Unity project) although it is labeled "Assistant URL":
+
+![Wrong_Assistant_URL](Wrong_Assistant_Service_URL.jpg)
+
+
 
 10/11/2020
 I created a new YouTube video which just focuses on how to set up the text-to-speech portion of this project: https://youtu.be/Yrtgig6qdhU
