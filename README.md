@@ -10,14 +10,14 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 
 
 11/17/2020
-Some people have been trying to use the inccorect Service URL parameter for the Watson Assistant credentials. You should use the Service URL found on the first page when you open the specific Assitant as shon here:
+
+Some people have been trying to use the inccorect Service URL parameter for the Watson Assistant credentials in the Unity project. You should use the Service URL found at the IBM Cloud website on the page when you first open the specific Assistant as shown here:
 
 ![Correct_Assistant_URL](Correct_Assistant_Service_URL.jpg)
 
-The URL found on the  "Assistant settings" page under "API details" is not correct (for this Unity project) although it is labeled "Assistant URL":
+The URL found on the "Assistant settings" page under "API details" is not correct (for this Unity project) although it is labeled "Assistant URL":
 
 ![Wrong_Assistant_URL](Wrong_Assistant_Service_URL.jpg)
-
 
 
 10/11/2020
