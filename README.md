@@ -11,7 +11,7 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 
 11/26/2020
 
-![Assistant_credentials](Assistant_credentials.gif)
+![Assistant_credentials](Correct Assistant Service URL.jpg)
 
 10/11/2020
 I created a new YouTube video which just focuses on how to set up the text-to-speech portion of this project: https://youtu.be/Yrtgig6qdhU
