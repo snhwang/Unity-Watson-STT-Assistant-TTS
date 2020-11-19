@@ -1,5 +1,3 @@
-# Sorry, I think unity-sdk-4.7.1 does not work anymore with the current IBM Watson Assistant. Please wait for me to update this repo to 4.8.0 or do it yourself. You just need to delete the unity-sdk-4.7.1 folder in assets, download 4.8.0 ( https://github.com/watson-developer-cloud/unity-sdk ), and copy it into Assets.
-
 # 3D Chatbot with IBM Watson Speech-To-Text, Assistant, and Text-To-Speech on Unity
 
 Scott Hwang
@@ -9,6 +7,10 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 11/18/2020
 
 ## Latest Notes
+11/18/2020
+Unity-sdk-4.7.1 does not work anymore with the current IBM Watson Assistant, at least not with this Unity project. I replaced it with unity-sdk-4.8.0. If you have significantly modified the project, you may want to upgrade your version by yourself. You just need to delete the unity-sdk-4.7.1 folder in assets, download 4.8.0 ( https://github.com/watson-developer-cloud/unity-sdk/releases ), and copy it into Assets.
+
+I was asked how to change the voice of the chatbot. You just need to select the gameobject in the Unity Hierarchy with the TextToSpeech script in it. In this project, the gameobject is usually called TextToSpeech. Then, go to the Unity Inspector to find the TextToSpeech (Script). There is a dropdown menu labeled Voice. You can change the voice in the menu. The voices labeled with a V3 sound better but take longer to process. They result in a greater lag before you hear the spoken response, especiallly if the response is long.
 
 11/17/2020
 
