@@ -1,13 +1,14 @@
+# Sorry, I think unity-sdk-4.7.1 does not work anymore with the current IBM Watson Assistant. Please wait for me to update this repo to 4.8.0 or do it yourself. You just need to delete the unity-sdk-4.7.1 folder in assets, download 4.8.0, and copy it into Assets.
+
 # 3D Chatbot with IBM Watson Speech-To-Text, Assistant, and Text-To-Speech on Unity
 
 Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
 
-11/17/2020
+11/18/2020
 
 ## Latest Notes
-
 
 11/17/2020
 
