@@ -4,9 +4,12 @@ Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
 
-11/18/2020
+12/08/2020
 
 ## Latest Notes
+12/08/2020
+I modified the file SimpleBot.cs so that the chatbot responds with "I don't know how to respond to that" if Assistant does not return a usable response.
+
 11/18/2020
 Unity-sdk-4.7.1 does not work anymore with the current IBM Watson Assistant, at least not with this Unity project. I replaced it with unity-sdk-4.8.0. If you have significantly modified the project, you may want to upgrade your version by yourself. You just need to delete the unity-sdk-4.7.1 folder in assets, download 4.8.0 ( https://github.com/watson-developer-cloud/unity-sdk/releases ), and copy it into Assets.
 
