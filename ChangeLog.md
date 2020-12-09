@@ -16,7 +16,8 @@ The URL found on the "Assistant settings" page under "API details" is not correc
 
 ![Wrong_Assistant_URL](Wrong_Assistant_Service_URL.jpg)
 
-
+10/11/2020
+I created a new YouTube video which just focuses on how to set up the text-to-speech portion of this project: https://youtu.be/Yrtgig6qdhU
 
 07/05/2020
 Updated Unity to latest LTS version: 2019.4.3f1. Also, updated to the latest IBM SDKs: unity-sdk-4.7.1 and unity-sdk-core-1.2.1. It seems to work without any other changes.
