@@ -228,7 +228,6 @@ public class SimpleBot : MonoBehaviour
             response.Result.Output.Generic == null ||
             response.Result.Output.Generic.Count < 1)
         {
-            //textResponse = string.Empty;
             textResponse = "I don't know how to respond to that.";
         }
         else
