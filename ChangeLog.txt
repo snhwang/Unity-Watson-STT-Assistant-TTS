@@ -1,3 +1,23 @@
+12/08/2020
+I modified the file SimpleBot.cs so that the chatbot responds with "I don't know how to respond to that" if Assistant does not return a usable response.
+
+11/18/2020
+Unity-sdk-4.7.1 does not work anymore with the current IBM Watson Assistant, at least not with this Unity project. I replaced it with unity-sdk-4.8.0. If you have significantly modified the project, you may want to upgrade your version by yourself. You just need to delete the unity-sdk-4.7.1 folder in assets, download 4.8.0 ( https://github.com/watson-developer-cloud/unity-sdk/releases ), and copy it into Assets.
+
+I was asked how to change the voice of the chatbot. You just need to select the gameobject in the Unity Hierarchy with the TextToSpeech script in it. In this project, the gameobject is usually called TextToSpeech. Then, go to the Unity Inspector to find the TextToSpeech (Script). There is a dropdown menu labeled Voice. You can change the voice in the menu. The voices labeled with a V3 sound better but take longer to process. They result in a greater lag before you hear the spoken response, especiallly if the response is long.
+
+11/17/2020
+
+Some people have been trying to use the inccorect Service URL parameter for the Watson Assistant credentials in the Unity project. You should use the Service URL found at the IBM Cloud website on the page when you first open the specific Assistant as shown here:
+
+![Correct_Assistant_URL](Correct_Assistant_Service_URL.jpg)
+
+The URL found on the "Assistant settings" page under "API details" is not correct (for this Unity project) although it is labeled "Assistant URL":
+
+![Wrong_Assistant_URL](Wrong_Assistant_Service_URL.jpg)
+
+
+
 07/05/2020
 Updated Unity to latest LTS version: 2019.4.3f1. Also, updated to the latest IBM SDKs: unity-sdk-4.7.1 and unity-sdk-core-1.2.1. It seems to work without any other changes.
 
