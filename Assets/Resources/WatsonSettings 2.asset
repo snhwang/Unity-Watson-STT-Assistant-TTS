@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e030247e3a99e44a950edca6224e0e6, type: 3}
   m_Name: WatsonSettings 2
   m_EditorClassIdentifier: 
-  Assistant_apikey: eymCvEao1ZaV7JZpioZOyqV7IS8Ynjee4bqXWQVqS_Cq
-  serviceUrl: https://api.us-south.assistant.watson.cloud.ibm.com/instances/ea5bc14d-18aa-44ec-9634-2bfc2b0ce63e
-  versionDate: 2020-04-13
-  assistantId: 3143ff8f-5168-4ca2-a85f-1ab8be842ad8
-  tts_apikey: n77hXfAz1dGiwkAQpesop-I802Lh4oVM-5sxuBN2kOtr
-  tts_serviceUrl: https://stream.watsonplatform.net/text-to-speech/api
-  stt_apikey: mFIZAoJ0ku5KgA0-3nKK-U63MMUWHtNlf9wPFB8a8KFu
-  stt_serviceUrl: https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/3b9b9e58-6712-47aa-8ddd-18122ade374d
+  Assistant_apikey: 
+  serviceUrl: 
+  versionDate: 
+  assistantId: 
+  tts_apikey: 
+  tts_serviceUrl: 
+  stt_apikey: 
+  stt_serviceUrl: 
