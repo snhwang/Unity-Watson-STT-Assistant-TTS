@@ -4,10 +4,10 @@ Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
 
-03/20/2021
+03/29/2021
 
 ## Latest Notes
-03/20/2021
+03/29/2021
 
 There is a new Unity scene called MultiChatbot. This contains 2 "bot" GameObjects which have their own chatbot units (speech-to-text, chat, and text-to-speech). Each bot has a separate WatsonSettings file. Right now, the API keys and other credentials are the same for each of the WatsonSettings, but theoretically each bot could have different settings so that they provide different conversations. One bot has a male voice and the other bot has a female voice. Each bot only has a colored cube as an avatar. You can replace the cube with UMA or other 3D model. SALSA lipsync or other lipsync software can be added but is not included since these are not free items. I will have a version with Oculus Lipsync and talking heads uploaded to a different repo in the near future. The player GameObject is represented by a white sphere and contains the main camera. You can move around using the left/right arrow keys for rotation and up/down arrwos for translation forward/backward. Only the bot that is nearest to the player will respond to spoken speech. However, the bot must be within a minimum distance before it will respond. The distance threshold is currently set to 10. It can be changed by the parameter field in the GameObject MultiBotControl. I will find time to provide better documentation.
 
