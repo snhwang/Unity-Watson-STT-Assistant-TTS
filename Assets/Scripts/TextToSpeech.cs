@@ -38,8 +38,7 @@ using UnityEngine.UI;
 
 public class TextToSpeech : MonoBehaviour
 {
-    [SerializeField]
-    private WatsonSettings settings;
+    public WatsonSettings settings;
 
     /* The voices provided by IBM. Voices with V3 are the more advance
      * "neural" voices. You can find a more complete list including voices

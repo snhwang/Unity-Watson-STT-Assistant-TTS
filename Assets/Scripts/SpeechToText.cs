@@ -37,8 +37,7 @@ using IBM.Cloud.SDK.DataTypes;
 
 public class SpeechToText : MonoBehaviour
 {
-    [SerializeField]
-    private WatsonSettings settings;
+    public WatsonSettings settings;
 
     /* I have only included the English language recognition models
      * (UK and US versions). Others can be found at:

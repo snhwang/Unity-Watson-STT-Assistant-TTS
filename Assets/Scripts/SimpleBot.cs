@@ -35,8 +35,7 @@ using UnityEngine.UI;
 
 public class SimpleBot : MonoBehaviour
 {
-    [SerializeField]
-    private WatsonSettings settings;
+    public WatsonSettings settings;
 
     private AssistantService Assistant_service;
 
