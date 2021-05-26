@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a3c684705042f345975d924f6983e36
+guid: 9b6ba260dada0ea4a871a42011f8b87d
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -12,38 +12,33 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
-      : Linux
+      '': Linux
     second:
       enabled: 0
       settings:
         CPU: x86
   - first:
-      : OSXIntel
+      '': OSXIntel
     second:
       enabled: 0
       settings:
         CPU: AnyCPU
   - first:
-      : OSXIntel64
+      '': OSXIntel64
     second:
       enabled: 0
       settings:
         CPU: AnyCPU
   - first:
-      : SamsungTV
+      '': SamsungTV
     second:
-      enabled: 1
+      enabled: 0
       settings:
         STV_MODEL: STANDARD_13
   - first:
-      : Tizen
-    second:
-      enabled: 1
-      settings: {}
-  - first:
       Android: Android
     second:
-      enabled: 1
+      enabled: 0
       settings:
         CPU: AnyCPU
   - first:
@@ -59,11 +54,6 @@ PluginImporter:
         CPU: AnyCPU
         DefaultValueInitialized: true
         OS: AnyOS
-  - first:
-      Facebook: WebGL
-    second:
-      enabled: 1
-      settings: {}
   - first:
       Facebook: Win
     second:
@@ -95,11 +85,6 @@ PluginImporter:
       settings:
         CPU: AnyCPU
   - first:
-      WebGL: WebGL
-    second:
-      enabled: 1
-      settings: {}
-  - first:
       Windows Store Apps: WindowsStoreApps
     second:
       enabled: 1
@@ -108,19 +93,14 @@ PluginImporter:
         DontProcess: False
         PlaceholderPath: Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll
         SDK: AnySDK
-        ScriptingBackend: Il2Cpp
+        ScriptingBackend: DotNet
   - first:
       iPhone: iOS
     second:
-      enabled: 1
+      enabled: 0
       settings:
         CompileFlags: 
         FrameworkDependencies: 
-  - first:
-      tvOS: tvOS
-    second:
-      enabled: 1
-      settings: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
