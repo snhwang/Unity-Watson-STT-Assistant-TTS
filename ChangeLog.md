@@ -1,3 +1,18 @@
+07/18/2021
+Unity is update to 2019.4.28f1. Watson is updated to unity-sdk-5.1.1 and unity-sdk-core-1.2.4.
+
+You can now choose more language models (other than US English) by selecting the SpeechToText prefab and choosing from the Model dropdown.
+
+You can now choose from more speaking voices for different languages by selecting the TextToSpeech prefab and choosing from the Voice dropdown.
+
+I moved all the Assets to a folder called "Unity-Watson-Chatbot" to help you keep the files organized and separate from your files.
+
+I also created a .unitypackage file that you can now download from Releases and import into your Unity package. You may have to go to Edit -> Project Settings.. in the Unity menu and then select Player Settings. Api compatibility must be set to .NET 4.x.
+
+05/26/2021
+
+I updated to Unity2019.4.26f1. The Watson unity-sdk-core sdk was updated to 1.2.3. There was an error with a missing WatsonSettings in the ChatUnit gameobject which was fixed. I verifed that this work with the latest UMA avatar and Salsa.
+
 05/26/2021
 
 I updated to Unity2019.4.26f1. The Watson unity-sdk-core sdk was updated to 1.2.3. There was an error with a missing WatsonSettings in the ChatUnit gameobject which was fixed. I verifed that this work with the latest UMA avatar and Salsa.
