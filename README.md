@@ -4,9 +4,20 @@ Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
 
-05/26/2021
+07/18/2021
 
 ## Latest Notes
+
+07/18/2021
+Unity is update to 2019.4.28f1. Watson is updated to unity-sdk-5.1.1 and unity-sdk-core-1.2.4.
+
+You can now choose more language models (other than US English) by selecting the SpeechToText prefab and choosing from the Model dropdown.
+
+You can now choose from more speaking voices for different languages by selecting the TextToSpeech prefab and choosing from the Voice dropdown.
+
+I moved all the Assets to a folder called "Unity-Watson-Chatbot" to help you keep the files organized and separate from your files.
+
+I also created a .unitypackage file that you can now download from Releases and import into your Unity package. You may have to go to Edit -> Project Settings.. in the Unity menu and then select Player Settings. Api compatibility must be set to .NET 4.x.
 
 05/26/2021
 
@@ -19,7 +30,6 @@ There is a new Unity scene called MultiChatbot. This contains 2 "bot" GameObject
 If I messed something up with the other scenes, the previous version can be found in this repo under the branch "Unity2019.4.3-unity-sdk-5.0.1-core-1.2.1".
 
 This new master branch is upgraded to Unity2019.4.23f1, the IBM Watson unity-sdk-5.0.2 and unity-sdk-core-1.2.2.
-
 
 12/08/2020
 I modified the file SimpleBot.cs so that the chatbot responds with "I don't know how to respond to that" if Assistant does not return a usable response.
